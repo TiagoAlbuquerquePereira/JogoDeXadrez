@@ -29,4 +29,15 @@ public class TabuleiroDeJogo {
 		this.colunas = colunas;
 	}
 
+	public Peca peca(int linha, int coluna) {
+
+		return pecas_do_tabuleiro[linha][coluna];
+
+	}
+
+	public Peca peca(Posicao posicao) {
+		return pecas_do_tabuleiro[posicao.getLinha()][posicao.getColuna()];
+
+	}
+
 }
