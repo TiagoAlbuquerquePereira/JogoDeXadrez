@@ -40,4 +40,9 @@ public class TabuleiroDeJogo {
 
 	}
 
+	public void colocar_Peca(Peca peca, Posicao posicao) {
+		pecas_do_tabuleiro[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
+
 }
