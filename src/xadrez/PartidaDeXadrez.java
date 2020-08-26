@@ -35,7 +35,7 @@ public class PartidaDeXadrez {
 	private void setupinicial() {
 
 		Tabuleiro_De_Jogo.colocar_Peca(new Torre(Tabuleiro_De_Jogo, Cor.WHITE), new Posicao(2, 1));
-		Tabuleiro_De_Jogo.colocar_Peca(new Rei(Tabuleiro_De_Jogo, Cor.BLACK), new Posicao(0, 4));
+		Tabuleiro_De_Jogo.colocar_Peca(new Rei(Tabuleiro_De_Jogo, Cor.BLACK), new Posicao(7, 4));
 	}
 
 }
