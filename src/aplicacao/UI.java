@@ -1,8 +1,25 @@
 package aplicacao;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import xadrez.PecaDeXadrez;
+import xadrez.PosicaoDeXadrez;
 
 public class UI {
+
+	public static PosicaoDeXadrez lerPosicaoPeca(Scanner sc) {
+
+		try {
+			String S = sc.nextLine();
+			char coluna = S.charAt(0);
+			int linha = Integer.parseInt(S.substring(1));
+			return new PosicaoDeXadrez(coluna, linha);
+		} catch (RuntimeException e) {
+
+			throw new InputMismatchException("Erro ao ler posição de Xadrez");
+		}
+	}
 
 	public static void imprimirtabuleiro(PecaDeXadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {

@@ -1,5 +1,6 @@
 package xadrez;
 
+import tabuleiro.Peca;
 import tabuleiro.Posicao;
 import tabuleiro.TabuleiroDeJogo;
 import xadrez.pecas.Rei;
@@ -29,6 +30,30 @@ public class PartidaDeXadrez {
 		}
 
 		return matriz_de_pecas;
+
+	}
+
+	public PecaDeXadrez fazerMovimento(PosicaoDeXadrez posicaoDeOrigem, PosicaoDeXadrez PosicaoFinal) {
+
+		Posicao origem = posicaoDeOrigem.toPosicao();
+		Posicao posicao_Final = PosicaoFinal.toPosicao();
+		validarPosicaoDeOrigem(origem);
+		Peca peca_Capturada = fazer_Movimento(origem, posicao_Final);
+		return (PecaDeXadrez) peca_Capturada;
+	}
+
+	private Peca fazer_Movimento(Posicao posicaoDeOrigem, Posicao PosicaoFinal) {
+		Peca p = Tabuleiro_De_Jogo.remover_Peca(posicaoDeOrigem);
+		Peca peca_Capturada = Tabuleiro_De_Jogo.remover_Peca(PosicaoFinal);
+		Tabuleiro_De_Jogo.colocar_Peca(p, PosicaoFinal);
+		return peca_Capturada;
+	}
+
+	private void validarPosicaoDeOrigem(Posicao posicao) {
+		if (!Tabuleiro_De_Jogo.existe_Peca(posicao)) {
+			throw new xadrezException("A posição está fora do tabuleiro");
+
+		}
 
 	}
 
