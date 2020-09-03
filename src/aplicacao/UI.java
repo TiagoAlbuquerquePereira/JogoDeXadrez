@@ -8,6 +8,11 @@ import xadrez.PosicaoDeXadrez;
 
 public class UI {
 
+	public static void limparTela() {
+		System.out.flush();
+
+	}
+
 	public static PosicaoDeXadrez lerPosicaoPeca(Scanner sc) {
 
 		try {
