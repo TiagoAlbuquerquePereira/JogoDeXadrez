@@ -16,4 +16,10 @@ public class Torre extends PecaDeXadrez {
 		return "T";
 	}
 
+	@Override
+	public boolean[][] possiveis_Movimentos() {
+		boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+		return null;
+	}
+
 }
