@@ -23,8 +23,9 @@ public class Programa {
 				System.out.println();
 				System.out.print("Peça que deseja mover: ");
 				PosicaoDeXadrez origem = UI.lerPosicaoPeca(sc);
+				boolean[][] possiveis_Movimentos = partida1.possiveis_Movimentos(origem);
+				System.out.println(possiveis_Movimentos);
 
-				
 				System.out.println();
 				System.out.print("Casa para mover a peça: ");
 				PosicaoDeXadrez posicao_Final = UI.lerPosicaoPeca(sc);
